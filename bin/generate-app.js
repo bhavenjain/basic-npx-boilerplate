@@ -35,11 +35,13 @@ async function main() {
     process.chdir(projectPath);
 
     console.log('Installing dependencies...');
-    execSync('npm install');
+    execSync('npm i --legacy-peer-deps');
 
     console.log('Removing useless files');
     execSync('npx rimraf ./.git');
-    fs.unlinkSync(path.join(projectPath, 'bin'), { recursive: true });
+    fs.rm(path.join(projectPath, 'bin'), { recursive: true }, (err) => {
+      console.log(err)
+    });
 
     console.log('The installation is done, this is ready to use !');
 
