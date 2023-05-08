@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import { execSync } from "child_process"
+// import { execSync } from "child_process"
 import path from "path"
 import fs from "fs"
-// const { execSync } = require('child_process');
+const { execSync } = require('child_process');
 // const fs = require('fs')
 // const path = require('path')
 
