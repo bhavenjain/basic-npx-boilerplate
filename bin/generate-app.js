@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
+import path from "path"
+import fs from "fs"
+
 const { execSync } = require('child_process');
-const path = require('path');
-const fs = require('fs');
 
 if (process.argv.length < 3) {
   console.log('You have to provide a name to your app.');
@@ -14,7 +15,7 @@ if (process.argv.length < 3) {
 const projectName = process.argv[2];
 const currentPath = process.cwd();
 const projectPath = path.join(currentPath, projectName);
-const git_repo = YOUR_GIT_URL;
+const git_repo = "https://github.com/bhavenjain/basic-npx-boilerplate.git";
 
 try {
   fs.mkdirSync(projectPath);
@@ -39,7 +40,7 @@ async function main() {
 
     console.log('Removing useless files');
     execSync('npx rimraf ./.git');
-    fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
+    fs.rmd(path.join(projectPath, 'bin'), { recursive: true });
 
     console.log('The installation is done, this is ready to use !');
 
