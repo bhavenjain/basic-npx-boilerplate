@@ -30,7 +30,7 @@ try {
 async function main() {
   try {
     console.log('Downloading files...');
-    execSync(`git clone ${git_repo} ${projectPath}`);
+    execSync(`git clone ${git_repo}`);
 
     process.chdir(projectPath);
 
