@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
-const fs = require('fs')
-const path = require('path')
+import { execSync } from "child_process"
+import path from "path"
+import fs from "fs"
+// const { execSync } = require('child_process');
+// const fs = require('fs')
+// const path = require('path')
 
 if (process.argv.length < 3) {
   console.log('You have to provide a name to your app.');
@@ -22,7 +25,7 @@ try {
   if (err.code === 'EEXIST') {
     console.log(`The file ${projectName} already exist in the current directory, please give it another name.`);
   } else {
-    console.log(error);
+    console.log(err);
   }
   process.exit(1);
 }
@@ -39,8 +42,7 @@ async function main() {
 
     console.log('Removing useless files');
     execSync('npx rimraf ./.git');
-    execSync('npx rimraf ./node_modules');
-    fs.rm(path.join(projectPath, 'bin'), { recursive: true });
+    fs.unlinkSync(path.join(projectPath, 'bin'), { recursive: true });
 
     console.log('The installation is done, this is ready to use !');
 
