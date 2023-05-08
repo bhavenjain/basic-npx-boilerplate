@@ -17,6 +17,6 @@
     "rimraf": "^5.0.0"
   },
   "bin": {
-    "create-boilerplate": "./generate-app.js"
+    "create-boilerplate": "./bin/generate-app.js"
   }
 }
