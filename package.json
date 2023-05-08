@@ -27,5 +27,9 @@
   },
   "bin": {
     "create-boilerplate": "./bin/generate-app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhavenjain/basic-npx-boilerplate.git"
   }
 }
