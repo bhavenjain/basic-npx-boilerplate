@@ -39,7 +39,7 @@ async function main() {
 
     console.log('Removing useless files');
     execSync('npx rimraf ./.git');
-    fs.rmd(path.join(projectPath, 'bin'), { recursive: true });
+    fs.rm(path.join(projectPath, 'bin'), { recursive: true });
 
     console.log('The installation is done, this is ready to use !');
 
