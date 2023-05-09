@@ -13,6 +13,8 @@ if (process.argv.length < 3) {
 
 const projectName = process.argv[2];
 const currentPath = process.cwd();
+currentPath.replace(/(\s+)/g, '\\$1');
+
 const projectPath = path.join(currentPath, projectName);
 const git_repo = "https://github.com/bhavenjain/basic-npx-boilerplate.git";
 
