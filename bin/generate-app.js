@@ -12,7 +12,8 @@ if (process.argv.length < 3) {
 }
 
 const projectName = process.argv[2];
-const currentPath = process.cwd();
+let currentPath = process.cwd();
+currentPath = currentPath.replace(/(\s+)/g, '\\$1')
 currentPath.replace(/(\s+)/g, '\\$1');
 
 const projectPath = path.join(currentPath, projectName);
